@@ -1,5 +1,7 @@
 ## Install in ubuntu
-sudo apt install dovecot-imapd dovecot-pop3d -y \
-sudo apt install dovecot-lmtpd \
+```bash
+sudo apt install dovecot-imapd dovecot-pop3d -y 
+sudo apt install dovecot-lmtpd 
+```
 
 ##
