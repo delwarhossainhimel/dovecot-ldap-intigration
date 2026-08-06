@@ -11,7 +11,7 @@ vim /etc/dovecot/conf.d/10-auth.conf
 ```bash
 124 !include auth-ldap.conf.ext
 ```
-# add LDAP credential and information on path /etc/dovecot/dovecot-ldap.conf.ext
+#add LDAP credential and information on path /etc/dovecot/dovecot-ldap.conf.ext
 ```bash
 vim /etc/dovecot/dovecot-ldap.conf.ext
 ```
@@ -45,3 +45,16 @@ vim /etc/dovecot/conf.d/auth-ldap.conf.ext
  43 
 
 ```
+# Debug stage
+This Command let you know how dovecote authenticate an user "Such as just user name or full email"how they find the 
+```bash
+grep -R "auth_username_format" /etc/dovecot
+```
+# journalctl
+```bash
+journalctl -u dovecot --since "10 minutes ago"
+journalctl -u dovecot -f
+doveconf -c /etc/dovecot/dovecot.conf
+nl -ba /etc/dovecot/dovecot-ldap.conf.ext | sed -n '85,100p'
+```
+
